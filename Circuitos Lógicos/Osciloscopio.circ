@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.15.0.2.jar" version="1.0">
+This file is intended to be loaded by Logisim http://logisim.altervista.org
+<lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#TTL" name="2"/>
+  <lib desc="#Plexers" name="3">
+    <tool name="Multiplexer">
+      <a name="enable" val="false"/>
+    </tool>
+    <tool name="Demultiplexer">
+      <a name="enable" val="false"/>
+    </tool>
+    <tool name="Decoder">
+      <a name="enable" val="false"/>
+    </tool>
+  </lib>
+  <lib desc="#Arithmetic" name="4"/>
+  <lib desc="#Memory" name="5">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="6"/>
+  <lib desc="#Base" name="7">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="color" val="#000000"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <main name="Osciloscópio"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="7" map="Button2" name="Poke Tool"/>
+    <tool lib="7" map="Button3" name="Menu Tool"/>
+    <tool lib="7" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="7" name="Poke Tool"/>
+    <tool lib="7" name="Edit Tool"/>
+    <sep/>
+    <tool lib="7" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="color" val="#000000"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+  </toolbar>
+  <circuit name="Osciloscópio">
+    <a name="circuit" val="Osciloscópio"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="Dialog plain 12"/>
+    <a name="clabelcolor" val="#000000"/>
+    <wire from="(170,230)" to="(170,360)"/>
+    <wire from="(50,340)" to="(50,410)"/>
+    <wire from="(50,80)" to="(50,280)"/>
+    <wire from="(140,300)" to="(260,300)"/>
+    <wire from="(530,390)" to="(530,520)"/>
+    <wire from="(380,320)" to="(430,320)"/>
+    <wire from="(460,80)" to="(460,220)"/>
+    <wire from="(80,150)" to="(260,150)"/>
+    <wire from="(320,160)" to="(320,180)"/>
+    <wire from="(320,200)" to="(320,220)"/>
+    <wire from="(80,80)" to="(80,100)"/>
+    <wire from="(140,80)" to="(140,100)"/>
+    <wire from="(520,390)" to="(520,470)"/>
+    <wire from="(80,120)" to="(80,150)"/>
+    <wire from="(170,360)" to="(260,360)"/>
+    <wire from="(320,180)" to="(350,180)"/>
+    <wire from="(320,200)" to="(350,200)"/>
+    <wire from="(290,290)" to="(320,290)"/>
+    <wire from="(290,350)" to="(320,350)"/>
+    <wire from="(110,210)" to="(260,210)"/>
+    <wire from="(50,280)" to="(260,280)"/>
+    <wire from="(50,340)" to="(260,340)"/>
+    <wire from="(140,120)" to="(140,300)"/>
+    <wire from="(430,190)" to="(430,250)"/>
+    <wire from="(430,280)" to="(500,280)"/>
+    <wire from="(170,170)" to="(170,230)"/>
+    <wire from="(170,40)" to="(170,170)"/>
+    <wire from="(110,80)" to="(110,210)"/>
+    <wire from="(80,150)" to="(80,410)"/>
+    <wire from="(110,210)" to="(110,410)"/>
+    <wire from="(380,190)" to="(430,190)"/>
+    <wire from="(320,290)" to="(320,310)"/>
+    <wire from="(320,330)" to="(320,350)"/>
+    <wire from="(430,520)" to="(530,520)"/>
+    <wire from="(460,220)" to="(500,220)"/>
+    <wire from="(430,470)" to="(520,470)"/>
+    <wire from="(50,80)" to="(80,80)"/>
+    <wire from="(110,80)" to="(140,80)"/>
+    <wire from="(170,170)" to="(260,170)"/>
+    <wire from="(170,230)" to="(260,230)"/>
+    <wire from="(430,80)" to="(460,80)"/>
+    <wire from="(290,160)" to="(320,160)"/>
+    <wire from="(290,220)" to="(320,220)"/>
+    <wire from="(320,310)" to="(350,310)"/>
+    <wire from="(320,330)" to="(350,330)"/>
+    <wire from="(50,40)" to="(50,80)"/>
+    <wire from="(110,40)" to="(110,80)"/>
+    <wire from="(140,300)" to="(140,410)"/>
+    <wire from="(430,280)" to="(430,320)"/>
+    <wire from="(170,360)" to="(170,410)"/>
+    <wire from="(430,250)" to="(500,250)"/>
+    <wire from="(50,280)" to="(50,340)"/>
+    <comp lib="0" loc="(50,40)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
+      <a name="labelfont" val="Dialog bold 12"/>
+    </comp>
+    <comp lib="1" loc="(80,120)" name="NOT Gate">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="1" loc="(290,290)" name="AND Gate"/>
+    <comp lib="6" loc="(430,520)" name="Button">
+      <a name="label" val="Clear"/>
+      <a name="labelfont" val="Dialog bold 12"/>
+    </comp>
+    <comp lib="1" loc="(380,320)" name="OR Gate"/>
+    <comp lib="1" loc="(290,350)" name="AND Gate"/>
+    <comp lib="0" loc="(430,80)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Clock"/>
+    </comp>
+    <comp lib="1" loc="(290,220)" name="AND Gate"/>
+    <comp lib="1" loc="(140,120)" name="NOT Gate">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(430,470)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Enable"/>
+      <a name="labelfont" val="Dialog bold 12"/>
+    </comp>
+    <comp lib="1" loc="(380,190)" name="OR Gate"/>
+    <comp lib="0" loc="(110,40)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="B"/>
+      <a name="labelfont" val="Dialog bold 12"/>
+    </comp>
+    <comp lib="6" loc="(500,220)" name="Digital Oscilloscope">
+      <a name="inputs" val="5"/>
+      <a name="label" val="Osciloscópio"/>
+    </comp>
+    <comp lib="0" loc="(170,40)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="C"/>
+      <a name="labelfont" val="Dialog bold 12"/>
+    </comp>
+    <comp lib="1" loc="(290,160)" name="AND Gate"/>
+  </circuit>
+  <circuit name="Clock">
+    <a name="circuit" val="Clock"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="Dialog plain 12"/>
+    <a name="clabelcolor" val="#000000"/>
+    <wire from="(300,430)" to="(440,430)"/>
+    <wire from="(620,130)" to="(620,140)"/>
+    <wire from="(580,120)" to="(630,120)"/>
+    <wire from="(510,160)" to="(560,160)"/>
+    <wire from="(590,130)" to="(590,200)"/>
+    <wire from="(580,120)" to="(580,190)"/>
+    <wire from="(430,210)" to="(430,230)"/>
+    <wire from="(540,80)" to="(640,80)"/>
+    <wire from="(550,90)" to="(650,90)"/>
+    <wire from="(550,170)" to="(550,250)"/>
+    <wire from="(620,200)" to="(620,220)"/>
+    <wire from="(630,120)" to="(630,140)"/>
+    <wire from="(510,150)" to="(550,150)"/>
+    <wire from="(510,170)" to="(550,170)"/>
+    <wire from="(540,180)" to="(540,220)"/>
+    <wire from="(510,140)" to="(540,140)"/>
+    <wire from="(510,180)" to="(540,180)"/>
+    <wire from="(450,170)" to="(470,170)"/>
+    <wire from="(590,130)" to="(620,130)"/>
+    <wire from="(560,160)" to="(560,260)"/>
+    <wire from="(540,80)" to="(540,140)"/>
+    <wire from="(550,90)" to="(550,150)"/>
+    <wire from="(640,80)" to="(640,140)"/>
+    <wire from="(640,200)" to="(640,260)"/>
+    <wire from="(510,200)" to="(590,200)"/>
+    <wire from="(540,220)" to="(620,220)"/>
+    <wire from="(560,260)" to="(640,260)"/>
+    <wire from="(550,250)" to="(630,250)"/>
+    <wire from="(650,90)" to="(650,140)"/>
+    <wire from="(630,200)" to="(630,250)"/>
+    <wire from="(510,190)" to="(580,190)"/>
+    <wire from="(360,180)" to="(360,340)"/>
+    <wire from="(360,180)" to="(430,180)"/>
+    <wire from="(300,340)" to="(360,340)"/>
+    <wire from="(360,340)" to="(440,340)"/>
+    <wire from="(370,190)" to="(430,190)"/>
+    <wire from="(370,190)" to="(370,370)"/>
+    <wire from="(300,370)" to="(370,370)"/>
+    <wire from="(370,370)" to="(440,370)"/>
+    <wire from="(380,200)" to="(380,400)"/>
+    <wire from="(380,200)" to="(430,200)"/>
+    <wire from="(380,400)" to="(440,400)"/>
+    <wire from="(300,400)" to="(380,400)"/>
+    <comp lib="6" loc="(620,140)" name="7-Segment Display"/>
+    <comp lib="0" loc="(300,430)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(430,230)" name="Constant">
+      <a name="facing" val="north"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(300,340)" name="Clock"/>
+    <comp lib="0" loc="(450,170)" name="Splitter">
+      <a name="facing" val="west"/>
+    </comp>
+    <comp lib="3" loc="(510,170)" name="DisplayDecoder"/>
+    <comp lib="0" loc="(300,370)" name="Clock">
+      <a name="highDuration" val="2"/>
+      <a name="lowDuration" val="2"/>
+    </comp>
+    <comp lib="6" loc="(440,340)" name="Digital Oscilloscope"/>
+    <comp lib="0" loc="(300,400)" name="Clock">
+      <a name="highDuration" val="4"/>
+      <a name="lowDuration" val="4"/>
+    </comp>
+  </circuit>
+</project>
