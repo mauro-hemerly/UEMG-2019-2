@@ -10,14 +10,15 @@ main = print (maior2' 10 20)
 idade :: Int -- Um valor inteiro constante
 idade = 19
 
+
 maiorDeIdade :: Bool -- Usa a definição de idade
 maiorDeIdade = idade /= 18
 
 quadrado :: Int -> Int -- função que eleva um número ao quadrado
 quadrado x = x * x
 
-quadradoMaisUm :: Float -> Float
-quadradoMaisUm x = x * x + 1
+quadradoMaisUm :: Int -> Int
+quadradoMaisUm x = quadrado x + 1
 
 
 
@@ -38,7 +39,22 @@ conceito' x
         | 80 < x && x < 90 = "Conceito B"
         | 70 < x && x < 80 = "Conceito C"
         | 60 < x && x < 70 = "Conceito D"
-        | True = "Conceito E"
+        | otherwise = "Conceito E"
+
+--type String = [Char]
+-- otherwise :: Bool
+-- otherwise = True
+
+senao :: Bool
+senao = True
+
+type Nome = String
+type Endereco = String
+type Idade = Int
+type Pessoa = (Nome, Endereco, Idade)
+
+pessoa :: Pessoa
+pessoa = ("Mauro", "Rua", 22)
 
 
 maior2 :: Int -> Int -> Int
@@ -47,10 +63,8 @@ maior2 x y = if x > y then x else y
 maior2' :: Int -> Int -> Int
 maior2' x y
     | x > y = x
-    | senao = y
+    | otherwise = y
 
-senao :: Bool
-senao = True
 
 
 maior3 :: Int -> Int -> Int -> Int
@@ -61,15 +75,54 @@ maior3 x y z
 
 
 -- Casamento de Padrão
-match 10 = print 10
-match 'P' = print 'P'
-match True = print True
+match 10 = 100
+match 20 = 200
+match x = x + 1000
 
-match param = print param
+-- Casamento de Padrão com Tuplas
+match2 (18,True) = "Ok..."
+match2 (97,True) = "Ok..."
+--match2 x y = x + y
+--match2 (nome,sexo,_) = "Ok..."
+match2 (x,y) = "Ok..."
 
-match _ = print "Ok..."
+
+-- Converte digito decimal para sua extensão
+convDigitoText :: Int -> String
+convDigitoText num = 
+    case num of
+        0 -> "zero"
+        1 -> "um"
+        2 -> "dois"
+        3 -> "três"
+        4 -> "quatro"
+        5 -> "cinco"
+        6 -> "seis"
+        7 -> "sete"
+        8 -> "oito"
+        9 -> "nove"
+
+fst' :: (a,b) -> a
+fst' (x,_) = x
+
+snd' :: (b,a) -> a
+snd' (_,y) = y
+
+somaTupla :: (Int,Int)->(Int,Int)-> (Int,Int)
+somaTupla (x,y) (z,w) = (x+z,y+w)
+
+-- Sem casamento de padrão
+match' :: Int -> Int
+match' x 
+      | x == 10 = 100
+      | x == 20 = 200
+      | senao = x + 1000
 
 
+(|||) :: Bool->Bool->Bool
+(|||)  True _ = True
+(|||)  _ True = True
+(|||)  _ _ = False
 
 
 fatorial :: Int -> Int
