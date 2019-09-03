@@ -125,6 +125,46 @@ match' x
 (|||)  _ _ = False
 
 
+somaDoisPrimeiros :: [Int] -> Int
+somaDoisPrimeiros (x:y:xs) = x+y
+
+head' :: [a] -> a
+head' (x:xs)= x
+
+tail' :: [a] -> [a]
+tail' (x:xs) = xs
+
+somaLista :: [Int] -> Int
+somaLista [] = 0
+somaLista (x:xs) = x + somaLista xs
+
+
+dobraLista :: [Int] -> [Int]
+dobraLista [] = [] 
+dobraLista (x:xs) = (2*x) : dobraLista xs
+
+elem' :: Int -> [Int] -> Bool
+elem' _ [] = False
+elem' n (x:xs)
+    |n == x = True 
+    | otherwise = elem' n xs
+
+
+concatenaLista :: [Char]->[Char]->[Char]
+
+concatenaLista [] xs = xs
+concatenaLista xs [] = xs
+concatenaLista (x:xs) (y:ys) = [x] ++ [y] ++ concatenaLista xs ys
+
+
+
+
+
+
+
+
+
+
 fatorial :: Int -> Int
 fatorial n = if n > 0 then n * fatorial (n-1) else 1
 
