@@ -1,4 +1,10 @@
+-- Mauro Hemerly (Hämmerli) Gazzani
+-- Disciplina de Programação Funcional
+-- Curso de Engenharia de Computação
+-- UEMG - Unidade de Ituiutaba
+
 import Data.Char
+import Prelude
 
 main :: IO ()
 main = print (maior2' 10 20)
@@ -207,3 +213,9 @@ filter' _ [] = []
 filter' f (x:xs)
         | f x = x : filter' f xs
         | otherwise = filter' f xs
+
+listUp' :: Int->[Int]
+listUp' n = listUp'' 1 n
+
+listUp'' :: Int->Int->[Int]
+listUp'' c n = if (c == n) then [n] else c : listUp'' (c+1) n
