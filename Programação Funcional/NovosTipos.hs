@@ -5,10 +5,11 @@
 
 -- Definição de Novos Tipos de Dados
 
-data Cor = Vermelho | Verde | Azul
+data Cor = Vermelho | Verde | Azul deriving Eq
 
 data Endereco = Rua String Int Complemento
 data Complemento = Casa | Apartamento
+
 
 -- Definição de Classe de Tipos
 class Compara a where
@@ -19,10 +20,10 @@ class Compara a where
   naoEIgual x y = not (eIgual x y)
 
   (=:=) :: a -> a -> Bool
-  x =:= y = not (x /=:= y)
+  x =:= y = not (x =/= y)
 
-  (/=:=) :: a -> a -> Bool
-  x /=:= y = not (x =:= y)
+  (=/=) :: a -> a -> Bool
+  x =/= y = not (x =:= y)
 
 
 instance Compara Cor where
@@ -30,6 +31,7 @@ instance Compara Cor where
   eIgual Verde Verde = True
   eIgual Azul Azul = True
   eIgual _ _ = False
+
   Vermelho =:= Vermelho = True
   Verde =:= Verde = True
   Azul =:= Azul = True
@@ -43,6 +45,7 @@ instance Compara Complemento where
   Apartamento =:= Apartamento = True
   _ =:= _ = False
 
+-- Lista
 instance (Compara a) => Compara [a] where
   eIgual [] [] = True
   eIgual (x:xs) (y:ys) = eIgual x y && eIgual xs ys
@@ -52,7 +55,17 @@ instance (Compara a) => Compara [a] where
   (=:=) (x:xs) (y:ys) = (=:=) x y && (=:=) xs ys
   (=:=) _ _ = False
 
+-- Tupla de 2
+instance (Compara a, Compara b) => Compara (a,b) where
+  eIgual (x,y) (a,b) = eIgual x a && eIgual y b
 
+  (=:=) (x,y) (a,b) = (=:=) x a && (=:=) y b
+
+-- Tupla de 3
+instance (Compara a, Compara b, Compara c) => Compara (a,b,c) where
+  eIgual (x,y,z) (a,b,c) = eIgual x a && eIgual y b && eIgual z c
+
+  (=:=) (x,y,z) (a,b,c) = (=:=) x a && (=:=) y b && (=:=) z c
 
 -------------------------------------
 
