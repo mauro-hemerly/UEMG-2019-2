@@ -6,11 +6,10 @@
 module PontoFlutuante  where
 import Prelude hiding (repeat)
 
--- Laço sem fio provocado pela comparação de diferente em ponto flutuante
+-- Laço sem fim provocado pela comparação de diferente em ponto flutuante
 repeat :: Double -> Double -> IO()
 repeat inicio fim = do
-          let z = inicio * 10/10
-          let y = z + 0.1
+          let y = inicio + 0.1
           print y
           if (y /= fim) then (repeat y fim) else print y
 
