@@ -7,9 +7,52 @@
 
 data Cor = Vermelho | Verde | Azul deriving Eq
 
+data Mes = Jan | Fev | Mar | Abr | Mai | Jun | Jul | Ago | Set | Out | Nov | Dez
+
 data Endereco = Rua String Int Complemento
 data Complemento = Casa | Apartamento
 
+-- Árvore Binária
+data ArvoreBinaria a = No (ArvoreBinaria a) a (ArvoreBinaria a) | Null
+  deriving Show
+
+pertence :: Eq a => ArvoreBinaria a -> a -> Bool
+pertence Null _ = False
+pertence (No esq e dir) elem 
+        | e == elem = True
+        | otherwise = pertence esq elem || pertence dir elem
+
+-- Árvore de Busca Binária
+insereArvore :: Ord a => ArvoreBinaria a -> a -> ArvoreBinaria a
+insereArvore Null elem = No Null elem Null
+insereArvore (No esq e dir) elem
+        | elem > e = No esq e (insereArvore dir elem) 
+        | elem < e = No (insereArvore esq elem) e dir
+        | otherwise = No esq e dir
+
+preorder ::  ArvoreBinaria a -> [a]
+preorder Null = []
+preorder (No esq e dir) = [e] ++ preorder esq ++ preorder dir
+
+inorder :: ArvoreBinaria a -> [a]
+inorder Null = []
+inorder (No esq e dir) = inorder esq ++ [e] ++ inorder dir
+
+postorder :: ArvoreBinaria a -> [a]
+postorder Null = []
+postorder (No esq e dir) = postorder esq ++ postorder dir ++ [e]
+
+
+
+data Expr = Literal Int | Add Expr Expr | Sub Expr Expr | Mul Expr Expr | Div Expr Expr
+  deriving (Show,Eq)
+
+avalia :: Expr -> Int
+avalia (Literal x) = x
+avalia (Add expr1 expr2) = avalia expr1 + avalia expr2
+avalia (Sub expr1 expr2) = avalia expr1 - avalia expr2
+avalia (Mul expr1 expr2) = avalia expr1 * avalia expr2
+avalia (Div expr1 expr2) = avalia expr1 `div` avalia expr2
 
 -- Definição de Classe de Tipos
 class Compara a where
